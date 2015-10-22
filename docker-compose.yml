@@ -16,7 +16,7 @@ rest:
   ports:
     - "3030:3030"
   volumes:
-    - ../albicilla-rest:/myapp:ro
+    - /home/jimmy/www/albicilla-rest:/myapp:ro
   working_dir: /myapp
   command: node app.js
 api:
@@ -32,7 +32,7 @@ api:
   ports:
     - "3020:3020"
   volumes:
-    - ../albicilla-api:/myapp:ro
+    - /home/jimmy/www/albicilla-api:/myapp:ro
   working_dir: /myapp
   command: node app.js
 api-v4:
@@ -50,7 +50,7 @@ api-v4:
   ports:
     - "3050:3050"
   volumes:
-    - ../albicilla-api-v4/:/myapp:ro
+    - /home/jimmy/www/albicilla-api-v4/:/myapp:ro
   working_dir: /myapp
   command: node app.js
 public:
@@ -67,7 +67,7 @@ public:
   ports:
     - "3000:3000"
   volumes:
-    - ../albicilla-public:/myapp:ro
+    - /home/jimmy/www/albicilla-public:/myapp:ro
   working_dir: /myapp
   command: node app.js
 gentilis:
@@ -83,7 +83,7 @@ gentilis:
   ports:
     - "8080:80"
   volumes:
-    - ../gentilis:/var/www/html
+    - /home/jimmy/www/gentilis:/var/www/html
 user3:
   container_name: user3
   image: digitallyseamless/nodejs-bower-grunt:0.10
@@ -97,6 +97,6 @@ user3:
     - "9000:9000"
     - "35729:35729"
   volumes:
-    - ../albicilla-user:/myapp
+    - /home/jimmy/www/albicilla-user:/myapp
   working_dir: /myapp
   command: grunt serve
